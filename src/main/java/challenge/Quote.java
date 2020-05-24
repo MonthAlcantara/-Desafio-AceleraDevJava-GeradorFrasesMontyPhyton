@@ -1,68 +1,39 @@
 package challenge;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Objects;
+import javax.persistence.*;
 
-@Entity
+@Entity(name = "scripts")
 public class Quote {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String actor;
+    @Column(name = "detail")
+    private String quote;
 
-	private String actor;
+    public Integer getId() {
+        return id;
+    }
 
-	private String quote;
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Quote() {
-	}
+    public String getActor() {
+        return actor;
+    }
 
-	public Quote(Integer id, String actor, String quote) {
-		this.id = id;
-		this.actor = actor;
-		this.quote = quote;
-	}
+    public void setActor(String actor) {
+        this.actor = actor;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public String getQuote() {
+        return quote;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getActor() {
-		return actor;
-	}
-
-	public void setActor(String actor) {
-		this.actor = actor;
-	}
-
-	public String getQuote() {
-		return quote;
-	}
-
-	public void setQuote(String quote) {
-		this.quote = quote;
-	}
-
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof Quote)) return false;
-		Quote quote = (Quote) o;
-		return Objects.equals(id, quote.id) &&
-				Objects.equals(actor, quote.actor) &&
-				Objects.equals(quote, quote.quote);
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, actor, quote);
-	}
+    public void setQuote(String quote) {
+        this.quote = quote;
+    }
 }
 
 

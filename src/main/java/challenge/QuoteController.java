@@ -7,21 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/v1/quote")
 public class QuoteController {
 
     @Autowired
     private QuoteService service;
 
-    @GetMapping("/quot")
+    @GetMapping
     public Quote getQuote() {
-
         return service.getQuote();
     }
 
-    @GetMapping("/quot/{actor]")
+    @GetMapping("/{actor}")
     public Quote getQuoteByActor(@PathVariable("actor") String actor) {
-
         return service.getQuoteByActor(actor);
     }
 

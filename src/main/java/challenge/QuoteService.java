@@ -1,5 +1,7 @@
 package challenge;
 
+import challenge.Quote;
+
 public interface QuoteService {
 
 	Quote getQuote();
