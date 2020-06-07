@@ -11,6 +11,7 @@ import java.util.Random;
 
 @Service
 public class QuoteServiceImpl implements QuoteService {
+
     @Autowired
     private QuoteRepository repository;
 
